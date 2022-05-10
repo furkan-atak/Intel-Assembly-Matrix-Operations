@@ -52,14 +52,17 @@ int main(int argc, char** argv) {
     printf("\n");
     fclose(ptr);
 
-    int* total = (int*)malloc(sizeof(int) * size*size);
-    int a = sumFunc(arr, size*size);
+    //int a = sumFunc(arr, size*size);
 
-    printf("a: %d", a);
+    //printf("a: %d", a);
 
-    // for(int i = 0; i < size*size; i++) {
-    //     printf("%d, ", *(total+i));
-    // }
+
+    int* total = (int*)calloc(sizeof(int),size*size);
+    addFunction(arr, arr2, total, size*size);
+
+    for(int i = 0; i < size*size; i++) {
+        printf("%d, ", *(total+i));
+    }
 
     return 0;
 }

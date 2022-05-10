@@ -14,17 +14,17 @@ mov [ebp-8], ecx        ; stack var2 = matrix1
 mov ecx, [ebp+12]       ; ecx = par2 (size)
 
 
-xor eax, eax                
+xor eax, eax            ; clear to return result;     
 
 
 loop:
 mov esi, [ebp-4]    ; esi = sum
 mov edi, [ebp-8]    ; edi = &arr[0]
 add esi, [edi]      ; esi += arr[0]
-mov [ebp-4], esi
-add edi,4
-mov [ebp-8], edi
-dec ecx
+mov [ebp-4], esi    ; var1 = sum
+add edi,4           ; iterate arr
+mov [ebp-8], edi    ; var2 = arr[i++]
+dec ecx             ; arr condition check size-- > 0
 jnz loop
 
 
