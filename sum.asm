@@ -27,19 +27,7 @@ mov [ebp-8], edi    ; var2 = arr[i++]
 dec ecx             ; arr condition check size-- > 0
 jnz loop
 
-
-;mov esi, [ebp-4]    ; esi = sum
-;mov edi, [ebp-8]    ; edi = &arr[0]
-;add esi, [edi]      ; esi += arr[0]
-;mov [ebp-4], esi    ; var1 = 
-;mov edi, [edi + eax*4]
-;inc eax
-;mov ecx, [ebp-12]
-;dec ecx
-;mov [ebp-12],ecx  
-;jnz loop
-
-mov eax, esi
+mov eax, esi        ; return the value from the function which is stored in esi
 mov esp,ebp
 pop ebp
 ret
